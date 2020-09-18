@@ -171,6 +171,7 @@
 		84E77C782512360B00081105 /* ImageUpload */ = {
 			isa = PBXGroup;
 			children = (
+				848D016A25130E2000632EFB /* InProgressViewController.swift */,
 				845D1E15251249A00049FD26 /* ResourceInProgressCell.swift */,
 				845D1E13251249870049FD26 /* ResourceErrorCell.swift */,
 				845D1E112512496D0049FD26 /* ResourceCell.swift */,
@@ -192,7 +193,6 @@
 				84E77C852512360E00081105 /* Assets.xcassets */,
 				84E77C872512360E00081105 /* LaunchScreen.storyboard */,
 				84E77C8A2512360E00081105 /* Info.plist */,
-				848D016A25130E2000632EFB /* InProgressViewController.swift */,
 				84E77C822512360B00081105 /* ImageUpload.xcdatamodeld */,
 			);
 			path = ImageUpload;
