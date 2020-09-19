@@ -15,19 +15,13 @@
 		845D1E06251248D50049FD26 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E05251248D50049FD26 /* PersistenceHelper.swift */; };
 		845D1E08251248FB0049FD26 /* CloudinaryHelper1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E07251248FB0049FD26 /* CloudinaryHelper1.swift */; };
 		845D1E0A251249140049FD26 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E09251249140049FD26 /* Utils.swift */; };
-		845D1E0F251249320049FD26 /* EffectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E0C251249320049FD26 /* EffectCell.swift */; };
 		845D1E122512496D0049FD26 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E112512496D0049FD26 /* ResourceCell.swift */; };
-		845D1E14251249870049FD26 /* ResourceErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E13251249870049FD26 /* ResourceErrorCell.swift */; };
 		845D1E16251249A00049FD26 /* ResourceInProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E15251249A00049FD26 /* ResourceInProgressCell.swift */; };
 		845D1E1825124D5E0049FD26 /* UploadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E1725124D5E0049FD26 /* UploadedViewController.swift */; };
 		846BACA025123B8D00FCDF74 /* CloudConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BAC9F25123B8D00FCDF74 /* CloudConfig.swift */; };
 		846BACA225123D2C00FCDF74 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */; };
-		846BACA4251243EE00FCDF74 /* Helpers in Resources */ = {isa = PBXBuildFile; fileRef = 846BACA3251243EE00FCDF74 /* Helpers */; };
-		846BACA62512448B00FCDF74 /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 846BACA52512448B00FCDF74 /* Views */; };
-		84CA4CCB251261D200495987 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4CCA251261D200495987 /* UIButtonExtension.swift */; };
 		84E77C7A2512360B00081105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E77C792512360B00081105 /* AppDelegate.swift */; };
 		84E77C7C2512360B00081105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E77C7B2512360B00081105 /* SceneDelegate.swift */; };
-		84E77C7E2512360B00081105 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E77C7D2512360B00081105 /* ViewController.swift */; };
 		84E77C812512360B00081105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E77C7F2512360B00081105 /* Main.storyboard */; };
 		84E77C842512360B00081105 /* ImageUpload.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84E77C822512360B00081105 /* ImageUpload.xcdatamodeld */; };
 		84E77C862512360E00081105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E77C852512360E00081105 /* Assets.xcassets */; };
@@ -67,20 +61,14 @@
 		845D1E05251248D50049FD26 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		845D1E07251248FB0049FD26 /* CloudinaryHelper1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinaryHelper1.swift; sourceTree = "<group>"; };
 		845D1E09251249140049FD26 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		845D1E0C251249320049FD26 /* EffectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCell.swift; sourceTree = "<group>"; };
 		845D1E112512496D0049FD26 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
-		845D1E13251249870049FD26 /* ResourceErrorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorCell.swift; sourceTree = "<group>"; };
 		845D1E15251249A00049FD26 /* ResourceInProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceInProgressCell.swift; sourceTree = "<group>"; };
 		845D1E1725124D5E0049FD26 /* UploadedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedViewController.swift; sourceTree = "<group>"; };
 		846BAC9F25123B8D00FCDF74 /* CloudConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudConfig.swift; sourceTree = "<group>"; };
 		846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
-		846BACA3251243EE00FCDF74 /* Helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Helpers; sourceTree = "<group>"; };
-		846BACA52512448B00FCDF74 /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
-		84CA4CCA251261D200495987 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		84E77C762512360B00081105 /* ImageUpload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageUpload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E77C792512360B00081105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E77C7B2512360B00081105 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84E77C7D2512360B00081105 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84E77C802512360B00081105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84E77C832512360B00081105 /* ImageUpload.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageUpload.xcdatamodel; sourceTree = "<group>"; };
 		84E77C852512360E00081105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +136,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		847207272516283800A42A01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				845D1E15251249A00049FD26 /* ResourceInProgressCell.swift */,
+				845D1E112512496D0049FD26 /* ResourceCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84720728251628CA00A42A01 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84233F042514D48E003CACD7 /* InProgressViewController.swift */,
+				846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */,
+				845D1E1725124D5E0049FD26 /* UploadedViewController.swift */,
+				8459D3782513B2350046051B /* OpenImageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		847207292516290B00A42A01 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				845D1E07251248FB0049FD26 /* CloudinaryHelper1.swift */,
+				845D1E05251248D50049FD26 /* PersistenceHelper.swift */,
+				845D1E09251249140049FD26 /* Utils.swift */,
+				846BAC9F25123B8D00FCDF74 /* CloudConfig.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		84E77C6D2512360B00081105 = {
 			isa = PBXGroup;
 			children = (
@@ -173,30 +192,17 @@
 		84E77C782512360B00081105 /* ImageUpload */ = {
 			isa = PBXGroup;
 			children = (
-				84233F042514D48E003CACD7 /* InProgressViewController.swift */,
-				845D1E15251249A00049FD26 /* ResourceInProgressCell.swift */,
-				845D1E13251249870049FD26 /* ResourceErrorCell.swift */,
-				845D1E112512496D0049FD26 /* ResourceCell.swift */,
-				845D1E0C251249320049FD26 /* EffectCell.swift */,
-				845D1E07251248FB0049FD26 /* CloudinaryHelper1.swift */,
-				845D1E05251248D50049FD26 /* PersistenceHelper.swift */,
-				845D1E09251249140049FD26 /* Utils.swift */,
 				84E77C792512360B00081105 /* AppDelegate.swift */,
-				846BAC9F25123B8D00FCDF74 /* CloudConfig.swift */,
-				846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */,
-				845D1E1725124D5E0049FD26 /* UploadedViewController.swift */,
-				84233F062515029A003CACD7 /* PinterestLayout.swift */,
-				846BACA52512448B00FCDF74 /* Views */,
-				846BACA3251243EE00FCDF74 /* Helpers */,
 				84E77C7B2512360B00081105 /* SceneDelegate.swift */,
-				84E77C7D2512360B00081105 /* ViewController.swift */,
 				84E77C7F2512360B00081105 /* Main.storyboard */,
-				8459D3782513B2350046051B /* OpenImageViewController.swift */,
-				84CA4CCA251261D200495987 /* UIButtonExtension.swift */,
 				84E77C852512360E00081105 /* Assets.xcassets */,
 				84E77C872512360E00081105 /* LaunchScreen.storyboard */,
 				84E77C8A2512360E00081105 /* Info.plist */,
 				84E77C822512360B00081105 /* ImageUpload.xcdatamodeld */,
+				847207292516290B00A42A01 /* Helper */,
+				84720728251628CA00A42A01 /* Controllers */,
+				847207272516283800A42A01 /* View */,
+				84233F062515029A003CACD7 /* PinterestLayout.swift */,
 			);
 			path = ImageUpload;
 			sourceTree = "<group>";
@@ -330,9 +336,7 @@
 			files = (
 				84E77C892512360E00081105 /* LaunchScreen.storyboard in Resources */,
 				84E77C862512360E00081105 /* Assets.xcassets in Resources */,
-				846BACA4251243EE00FCDF74 /* Helpers in Resources */,
 				84E77C812512360B00081105 /* Main.storyboard in Resources */,
-				846BACA62512448B00FCDF74 /* Views in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,18 +465,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				845D1E16251249A00049FD26 /* ResourceInProgressCell.swift in Sources */,
-				845D1E14251249870049FD26 /* ResourceErrorCell.swift in Sources */,
 				845D1E122512496D0049FD26 /* ResourceCell.swift in Sources */,
-				845D1E0F251249320049FD26 /* EffectCell.swift in Sources */,
 				845D1E0A251249140049FD26 /* Utils.swift in Sources */,
 				845D1E08251248FB0049FD26 /* CloudinaryHelper1.swift in Sources */,
 				84233F072515029A003CACD7 /* PinterestLayout.swift in Sources */,
 				845D1E1825124D5E0049FD26 /* UploadedViewController.swift in Sources */,
 				845D1E06251248D50049FD26 /* PersistenceHelper.swift in Sources */,
 				84E77C842512360B00081105 /* ImageUpload.xcdatamodeld in Sources */,
-				84E77C7E2512360B00081105 /* ViewController.swift in Sources */,
 				84E77C7A2512360B00081105 /* AppDelegate.swift in Sources */,
-				84CA4CCB251261D200495987 /* UIButtonExtension.swift in Sources */,
 				846BACA225123D2C00FCDF74 /* BaseCollectionViewController.swift in Sources */,
 				8459D3792513B2350046051B /* OpenImageViewController.swift in Sources */,
 				84233F052514D48E003CACD7 /* InProgressViewController.swift in Sources */,
