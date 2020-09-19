@@ -16,10 +16,10 @@ class ResourceInProgressCell: UICollectionViewCell {
   //  @IBOutlet weak var overlayView: UIView!
    // @IBOutlet weak var progressView: UIProgressView!
     
-    @IBOutlet weak var imageView1 : CLDUIImageView!
-    @IBOutlet weak var overlayView11 : UIView!
-    @IBOutlet weak var progressView11 : UIProgressView!
-    @IBOutlet weak var uploadingStatusLabel : UILabel!
-    
+   
+    @IBOutlet weak var imageView2 : CLDUIImageView!
+    @IBOutlet weak var overlayView2 : UIView!
+    @IBOutlet weak var progressView2: UIProgressView!
+    @IBOutlet weak var updatingStatusLabel2 : UILabel!
     
 }

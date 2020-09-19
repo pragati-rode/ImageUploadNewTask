@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4CD6C5C8D72537DB3EF556CB /* Pods_ImageUpload_ImageUploadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA59D0A8C70FF1A5BACFD5A9 /* Pods_ImageUpload_ImageUploadUITests.framework */; };
 		51B6176C8F8DE61CC8CE12AD /* Pods_ImageUpload.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211E5423637E6CF461736B08 /* Pods_ImageUpload.framework */; };
+		84233F052514D48E003CACD7 /* InProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84233F042514D48E003CACD7 /* InProgressViewController.swift */; };
+		84233F072515029A003CACD7 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84233F062515029A003CACD7 /* PinterestLayout.swift */; };
 		8459D3792513B2350046051B /* OpenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459D3782513B2350046051B /* OpenImageViewController.swift */; };
 		845D1E06251248D50049FD26 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E05251248D50049FD26 /* PersistenceHelper.swift */; };
 		845D1E08251248FB0049FD26 /* CloudinaryHelper1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E07251248FB0049FD26 /* CloudinaryHelper1.swift */; };
@@ -22,7 +24,6 @@
 		846BACA225123D2C00FCDF74 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */; };
 		846BACA4251243EE00FCDF74 /* Helpers in Resources */ = {isa = PBXBuildFile; fileRef = 846BACA3251243EE00FCDF74 /* Helpers */; };
 		846BACA62512448B00FCDF74 /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 846BACA52512448B00FCDF74 /* Views */; };
-		848D016B25130E2000632EFB /* InProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D016A25130E2000632EFB /* InProgressViewController.swift */; };
 		84CA4CCB251261D200495987 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA4CCA251261D200495987 /* UIButtonExtension.swift */; };
 		84E77C7A2512360B00081105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E77C792512360B00081105 /* AppDelegate.swift */; };
 		84E77C7C2512360B00081105 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E77C7B2512360B00081105 /* SceneDelegate.swift */; };
@@ -60,6 +61,8 @@
 		47206598EF87D350FAEA796F /* Pods-ImageUpload.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageUpload.release.xcconfig"; path = "Target Support Files/Pods-ImageUpload/Pods-ImageUpload.release.xcconfig"; sourceTree = "<group>"; };
 		55517C90AB3DD49AAD25D3A0 /* Pods-ImageUploadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageUploadTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageUploadTests/Pods-ImageUploadTests.debug.xcconfig"; sourceTree = "<group>"; };
 		596A7BC8BDAB14192827823E /* Pods-ImageUpload-ImageUploadUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageUpload-ImageUploadUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImageUpload-ImageUploadUITests/Pods-ImageUpload-ImageUploadUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		84233F042514D48E003CACD7 /* InProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressViewController.swift; sourceTree = "<group>"; };
+		84233F062515029A003CACD7 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		8459D3782513B2350046051B /* OpenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenImageViewController.swift; sourceTree = "<group>"; };
 		845D1E05251248D50049FD26 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		845D1E07251248FB0049FD26 /* CloudinaryHelper1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinaryHelper1.swift; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 		846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		846BACA3251243EE00FCDF74 /* Helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Helpers; sourceTree = "<group>"; };
 		846BACA52512448B00FCDF74 /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
-		848D016A25130E2000632EFB /* InProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InProgressViewController.swift; path = "../../../../../Downloads/cloudinary_ios-master/Example/Cloudinary/Controllers/InProgressViewController.swift"; sourceTree = "<group>"; };
 		84CA4CCA251261D200495987 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		84E77C762512360B00081105 /* ImageUpload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageUpload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E77C792512360B00081105 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,7 +173,7 @@
 		84E77C782512360B00081105 /* ImageUpload */ = {
 			isa = PBXGroup;
 			children = (
-				848D016A25130E2000632EFB /* InProgressViewController.swift */,
+				84233F042514D48E003CACD7 /* InProgressViewController.swift */,
 				845D1E15251249A00049FD26 /* ResourceInProgressCell.swift */,
 				845D1E13251249870049FD26 /* ResourceErrorCell.swift */,
 				845D1E112512496D0049FD26 /* ResourceCell.swift */,
@@ -183,6 +185,7 @@
 				846BAC9F25123B8D00FCDF74 /* CloudConfig.swift */,
 				846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */,
 				845D1E1725124D5E0049FD26 /* UploadedViewController.swift */,
+				84233F062515029A003CACD7 /* PinterestLayout.swift */,
 				846BACA52512448B00FCDF74 /* Views */,
 				846BACA3251243EE00FCDF74 /* Helpers */,
 				84E77C7B2512360B00081105 /* SceneDelegate.swift */,
@@ -461,9 +464,9 @@
 				845D1E14251249870049FD26 /* ResourceErrorCell.swift in Sources */,
 				845D1E122512496D0049FD26 /* ResourceCell.swift in Sources */,
 				845D1E0F251249320049FD26 /* EffectCell.swift in Sources */,
-				848D016B25130E2000632EFB /* InProgressViewController.swift in Sources */,
 				845D1E0A251249140049FD26 /* Utils.swift in Sources */,
 				845D1E08251248FB0049FD26 /* CloudinaryHelper1.swift in Sources */,
+				84233F072515029A003CACD7 /* PinterestLayout.swift in Sources */,
 				845D1E1825124D5E0049FD26 /* UploadedViewController.swift in Sources */,
 				845D1E06251248D50049FD26 /* PersistenceHelper.swift in Sources */,
 				84E77C842512360B00081105 /* ImageUpload.xcdatamodeld in Sources */,
@@ -472,6 +475,7 @@
 				84CA4CCB251261D200495987 /* UIButtonExtension.swift in Sources */,
 				846BACA225123D2C00FCDF74 /* BaseCollectionViewController.swift in Sources */,
 				8459D3792513B2350046051B /* OpenImageViewController.swift in Sources */,
+				84233F052514D48E003CACD7 /* InProgressViewController.swift in Sources */,
 				84E77C7C2512360B00081105 /* SceneDelegate.swift in Sources */,
 				846BACA025123B8D00FCDF74 /* CloudConfig.swift in Sources */,
 			);

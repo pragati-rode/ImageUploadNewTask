@@ -19,6 +19,11 @@ internal let prefix = "https://res.cloudinary.com/dfdoypo9b"
   //  let config = CLDConfiguration(cloudinaryUrl: "CLOUDINARY_URL=cloudinary://999363646968972:y42rD4ZM4CVMWXb14QhuEZacRGI@dfdoypo9b")!
    // sut = CLDCloudinary(configuration: config)
 }
+internal enum CollectionViewType : Int {
+    case uploaded = 1
+    case InProgress = 2
+    
+}
 
 internal struct SettingCloudConfig {
    // static var sut: CLDCloudinary?

@@ -15,6 +15,7 @@ class BaseCollectionViewController: UIViewController {
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     var resources = [CloudResource]()
     let collectionViewColor = UIColor(red: 220/255.0, green: 220/255.0, blue: 220/255.0, alpha: 1.0);
+    
 //    let textNewColor = UIColor(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1.0);
 
     // MARK: ViewController
@@ -50,6 +51,7 @@ class BaseCollectionViewController: UIViewController {
     }
    
     
+    
     func getPlusButton() -> UIButton! {
         return nil
     }
@@ -84,13 +86,20 @@ extension BaseCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        if (resources.count == 0) {
-            getCollectionView()?.setEmptyMessage("Tap on ", "plus.circle", " to upload images")
+        if resources.isEmpty {
+            
+            if getReuseIdentifier() == "ResourceCell" {
+                getCollectionView()?.setEmptyMessage("Tap on ", "plus.circle", " to upload images")
+            }
+            else {
+                getCollectionView()?.setEmptyMessage(" No Uploads remaining ", "", "")
+            }
+            
+            return 0
+            
         } else {
             getCollectionView().restore()
         }
-        
-       
         
         return resources.count
     }
@@ -106,7 +115,7 @@ extension BaseCollectionViewController: UICollectionViewDataSource {
 
             // configure params for image fetch:
             let resourceType = resource.resourceType == "video" ? CLDUrlResourceType.video : CLDUrlResourceType.image
-            let params = CLDResponsiveParams.autoFill().setReloadOnSizeChange(true)
+            let params = CLDResponsiveParams.fit().setReloadOnSizeChange(true)
             cell.imageView.cldSetImage(publicId: resource.publicId!, cloudinary: getAppDelegate()!.cloudinary, resourceType: resourceType,
                     responsiveParams: params, transformation: CLDTransformation().setFetchFormat("jpg"))
            // cell.imageView.contentMode = .scaleAspectFit
@@ -141,8 +150,10 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = collectionView.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
-        
+//
         return CGSize(width: widthPerItem, height: widthPerItem)
+        
+
        
     }
 
@@ -173,11 +184,13 @@ extension UICollectionView {
         
         let attributedString = NSMutableAttributedString(string: message)
         let loveAttachment = NSTextAttachment()
+        if imageName != "" {
         loveAttachment.image = UIImage(systemName: imageName)
         loveAttachment.image = loveAttachment.image?.withRenderingMode(.alwaysTemplate)
         loveAttachment.image?.withTintColor(UIColor(red: 96/255.0, green: 96/255.0, blue: 96/255.0, alpha: 1.0))
         loveAttachment.bounds = iconsSize
         attributedString.append(NSAttributedString(attachment: loveAttachment))
+        }
        attributedString.append(NSAttributedString(string: message2))
         
        // messageLabel.text = message

@@ -21,7 +21,6 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
     @IBOutlet weak var collectionView: UICollectionView!
    
     @IBOutlet weak var imageView : CLDUIImageView!
-    @IBOutlet weak var overlayView : UIView!
     @IBOutlet weak var progressView : UIProgressView!
     @IBOutlet weak var uploadingStatusLabel : UILabel!
     @IBOutlet weak var viewForUploadingStatus : UIView!
@@ -29,14 +28,16 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
    
     @IBOutlet weak var plusButton: UIButton!
     
-    
+    var viewType: CollectionViewType = .uploaded
     static let progressChangedNotification1 = NSNotification.Name(rawValue: "com.cloudinary.sample.progress.notification")
     
     var progressMap: [String: Progress] = [:]
+    @IBOutlet weak var heightlayoutConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
            super.viewDidLoad()
         
             viewForUploadingStatus.isHidden = true
+            heightlayoutConstraint.constant = 0
             viewForUploadedImages.layer.cornerRadius = 10
             viewForUploadingStatus.layer.cornerRadius = 5
         collectionView.layer.cornerRadius = 10
@@ -81,6 +82,7 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
     
     @objc func someAction(_ sender:UITapGestureRecognizer){
         let controller = storyboard?.instantiateViewController(withIdentifier: "InProgressViewController")
+        controller?.modalPresentationStyle = .fullScreen
         self.present(controller!, animated: true, completion: nil)
         // swift 2
         // self.presentViewController(controller, animated: true, completion: nil)
@@ -117,26 +119,28 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
             progressMap[name!] = progress!
         }
         viewForUploadingStatus.isHidden = false
+        heightlayoutConstraint.constant = 70
         // refresh views
        reloadData111()
         if resources.count > 0 {
         let resource = resources[0]
-        setLocalImage(imageView: imageView, resource: resource)
+            DispatchQueue.main.async {
+                self.setLocalImage(imageView: self.imageView, resource: resource)
+            
+        
             
         //overlayView.isHidden = true
-        if let progress = progressMap[resource.localPath!] {
+                if let progress = self.progressMap[resource.localPath!] {
            // overlayView.isHidden = false
-            progressView.isHidden = false
-            progressView.progress = Float(progress.fractionCompleted)
-            uploadingStatusLabel.isHidden = false
-            uploadingStatusLabel.text = "Uploading... \(Int(progress.fractionCompleted * 100)) %"
+                    self.progressView.isHidden = false
+                    self.progressView.progress = Float(progress.fractionCompleted)
+                    self.uploadingStatusLabel.isHidden = false
+                    self.uploadingStatusLabel.text = "Uploading... \(Int(progress.fractionCompleted * 100)) %"
         } else {
             
-                    PersistenceHelper.fetch(statuses: [PersistenceHelper.UploadStatus.uploaded]) {fetchedResources in
-            
-                        self.viewForUploadingStatus.isHidden = true
-                    }
+
            
+            }
             }
             
         }
@@ -192,6 +196,9 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
                     return
 
                }
+                self.viewForUploadingStatus.isHidden = false
+                self.heightlayoutConstraint.constant = 70
+                
                 CloudinaryHelper1.upload(cloudinary: cloudinary , url: url, resourceType: resourceType)
                        .progress({ progress in
                            NotificationCenter.default.post(name: UploadedViewController.progressChangedNotification1, object: nil, userInfo: ["name": name!, "progress": progress])
@@ -199,6 +206,13 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
                            if (response != nil) {
                                PersistenceHelper.resourceUploaded(localPath: name!, publicId: (response?.publicId)!)
                                // cleanup - once a file is uploaded we don't use the local copy
+                            DispatchQueue.main.async {
+                                self.viewForUploadingStatus.isHidden = true
+                                self.heightlayoutConstraint.constant = 0
+                                self.imageView.image = nil
+                                self.uploadingStatusLabel.text = ""
+                            }
+                            
                                try? FileManager.default.removeItem(at: url)
                            } else if (error != nil) {
                                PersistenceHelper.resourceError(localPath: name!, code: (error?.code) != nil ? (error?.code)! : -1, description: (error?.userInfo["message"] as? String))
