@@ -184,22 +184,12 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
                   guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                       return
                    }
-                //appDelegate.initCloudinary()
-//                if let cloudName = UserDefaults.standard.object(forKey: SettingCloudConfig.cloudName) {
-//                    appDelegate.cloudinary = CLDCloudinary(configuration: CLDConfiguration(options: ["cloud_name": cloudName as AnyObject])!)
-//                          }
-                
-                let cloudName: String = "dfdoypo9b"//UserDefaults.standard.object(forKey: SettingCloudConfig.cloudName)
-                       appDelegate.cloudinary = CLDCloudinary(configuration: CLDConfiguration(options: ["cloud_name": cloudName as AnyObject])!)
-                
-               guard let cloudinary = appDelegate.cloudinary else {
-                    return
-
-               }
+              
+             
                 self.viewForUploadingStatus.isHidden = false
                 self.heightlayoutConstraint.constant = 70
                 
-                CloudinaryHelper1.upload(cloudinary: cloudinary , url: url, resourceType: resourceType)
+                CloudinaryHelper1.upload(cloudinary: appDelegate.cloudinary , url: url, resourceType: resourceType)
                        .progress({ progress in
                            NotificationCenter.default.post(name: UploadedViewController.progressChangedNotification1, object: nil, userInfo: ["name": name!, "progress": progress])
                        }).response({ response, error in
