@@ -106,7 +106,9 @@ extension BaseCollectionViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: getReuseIdentifier(), for: indexPath) as! ResourceCell
-
+        cell.layer.cornerRadius = 20
+        cell.layer.masksToBounds = true
+        cell.imageView.layer.cornerRadius = 20
         let resource = resources[indexPath.row]
         if (resource.publicId != nil) {
             // remote image, smart fetch from Cloudinary:

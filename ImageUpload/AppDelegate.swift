@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func initCloudinary() {
            // init cloudinary if there's a cloud name present (Otherwise the first load will require the user to type in his cloud name).
-        print("Cloud name ==> ", SettingCloudConfig.cloudName)
-        let cloudName: String = SettingCloudConfig.cloudName //"dfdoypo9b"//UserDefaults.standard.object(forKey: SettingCloudConfig.cloudName)
+       
+        let cloudName: String = SettingCloudConfig.cloudName 
         cloudinary = CLDCloudinary(configuration: CLDConfiguration(options: ["cloud_name": cloudName as AnyObject])!)
            
        }
