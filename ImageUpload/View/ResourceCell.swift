@@ -13,6 +13,7 @@ import Cloudinary
 class ResourceCell: UICollectionViewCell {
     // MARK: Properties
     @IBOutlet weak var imageView: CLDUIImageView!
+    @IBOutlet weak var imgView : UIImageView!
     
 //    override var isSelected: Bool{
 //           didSet{

@@ -16,6 +16,7 @@ import Cloudinary
 class OpenImageViewController: UIViewController,UploadedResourceDetails {
     
     @IBOutlet weak var imageView: CLDUIImageView!
+    @IBOutlet weak var imgView : UIImageView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var activityIndicator : UIActivityIndicatorView!
     var currEffect: EffectMetadata?
@@ -46,14 +47,9 @@ class OpenImageViewController: UIViewController,UploadedResourceDetails {
         self.resourceType = isVideo ? CLDUrlResourceType.video : CLDUrlResourceType.image
 
         DispatchQueue.global().async {
-//            if (self.isVideo) {
-//                self.effects = CloudinaryHelper1.generateVideoEffectList(cloudinary: self.cloudinary, resource: self.resource)
-//            } else {
-//                self.effects = CloudinaryHelper1.generateEffectList(cloudinary: self.cloudinary, resource: self.resource)
-//            }
-
             DispatchQueue.main.async {
-                self.loadImage()
+             //   self.loadImage()
+                self.downloadImagefrmCloud()
                // self.updateCurrEffect((self.effects.first)!)
               //  self.activityIndicator.stopAnimating()
             }
@@ -74,7 +70,8 @@ class OpenImageViewController: UIViewController,UploadedResourceDetails {
 
                     //  activityIndicator.isHidden = false
                    //   activityIndicator.startAnimating()
-        
+        //https://res.cloudinary.com/dfdoypo9b/image/upload/v1601282666/afrvv5h8mkkqrqawjvdt.jpg
+                    //https://res.cloudinary.com/dfdoypo9b/image/upload/v1601278669/tl9q3popioo1btuedyjr.jpg
                    let params = CLDResponsiveParams.fit().setReloadOnSizeChange(true)
                    self.imageView.cldSetImage(publicId: resource.publicId!, cloudinary: getAppDelegate()!.cloudinary, resourceType: resourceType,
                            responsiveParams: params, transformation: CLDTransformation().setFetchFormat("jpg"))
@@ -123,5 +120,40 @@ class OpenImageViewController: UIViewController,UploadedResourceDetails {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func downloadImagefrmCloud(){
+        let progressHandler = { (progress: Progress) in
+            print("Downloading from Cloudinary: \(Int(progress.fractionCompleted * 100))%")
+        }
+       // let url1 =  "https://res.cloudinary.com/dfdoypo9b/image/upload/v1601278669/tl9q3popioo1btuedyjr.jpg"
+        let urlString2  = CloudinaryHelper1.getUrlForTransformation(cloudinary, CLDTransformation(), resource)
+      //  print(url1)
+        let url = URL(string: urlString2)
+        
+        self.cloudinary.createDownloader().fetchImage(urlString2, progressHandler, completionHandler: { (result,error) in
+            
+            if let error = error {
+                print("Error downloading image %@", error)
+            }
+            else {
+                print("Image downloaded from Cloudinary successfully")
+                
+                do{
+                    let data = try Data(contentsOf: url!)
+                    DispatchQueue.main.async {
+                    self.imgView.image = UIImage(data: data)
+                   // self.imgView.image = UIImage(data: data)
+                  //  self.savePhotos()
+                    }
+                    
+                }
+                catch let er as NSError{
+                    print(er)
+                }
+                
+            }
+        
+        })
+    }
 
 }

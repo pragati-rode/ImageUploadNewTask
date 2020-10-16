@@ -27,6 +27,10 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
     @IBOutlet weak var viewForUploadedImages : UIView!
    
     @IBOutlet weak var plusButton: UIButton!
+    var cloudinary: CLDCloudinary!
+   // let imageView1 : CLDUIImageView!
+           
+           
     
     var viewType: CollectionViewType = .uploaded
     static let progressChangedNotification1 = NSNotification.Name(rawValue: "com.cloudinary.sample.progress.notification")
@@ -35,7 +39,16 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
     @IBOutlet weak var heightlayoutConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
            super.viewDidLoad()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
         
+        cloudinary = appDelegate.cloudinary
+        if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
+             layout.delegate = self
+           }
+//        imageView1.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+//         imageView1.image = nil
             viewForUploadingStatus.isHidden = true
             heightlayoutConstraint.constant = 0
             viewForUploadedImages.layer.cornerRadius = 10
@@ -64,6 +77,9 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
         return collectionView
     }
    
+    override func getView() -> UIView! {
+        return viewForUploadedImages
+    }
    
     override func getPlusButton() -> UIButton! {
         return plusButton
@@ -228,10 +244,45 @@ class UploadedViewController: BaseCollectionViewController, UIImagePickerControl
            // Dismiss the picker.
            dismiss(animated: true, completion: nil)
        }
+    
+   
 }
 
 protocol UploadedResourceDetails {
     func setResource(resource: CloudResource)
+    
+}
+extension UploadedViewController: PinterestLayoutDelegate {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+    let resource = resources[indexPath.row]
+  
+    let urlString2  = CloudinaryHelper1.getUrlForTransformation(self.cloudinary, CLDTransformation(), resource)
+  
+    let imageUrl = URL(string: urlString2)
+    do {
+        let imageData = try Data(contentsOf: imageUrl!)
+        let image = UIImage(data: imageData)
+        print("height ==> ",image?.size.height )
+        if let height = image?.size.height {
+            if height == 640.0 {
+                return height * 0.42
+            }else if height > 1000 && height <= 1500 {
+                return height * 0.2
+            }else if height <= 1000 && height >= 800 {
+                return height * 0.23
+            }
+            return height * 0.5
+        }
+    } catch let err {
+        print(err)
+    }
+           
+    return 180.0
+ 
+  }
+  
     
 }
 

@@ -17,6 +17,7 @@
 		845D1E122512496D0049FD26 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E112512496D0049FD26 /* ResourceCell.swift */; };
 		845D1E16251249A00049FD26 /* ResourceInProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E15251249A00049FD26 /* ResourceInProgressCell.swift */; };
 		845D1E1825124D5E0049FD26 /* UploadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D1E1725124D5E0049FD26 /* UploadedViewController.swift */; };
+		84647C712521A1EB005FEBA7 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84647C702521A1EB005FEBA7 /* PinterestLayout.swift */; };
 		846BACA025123B8D00FCDF74 /* CloudConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BAC9F25123B8D00FCDF74 /* CloudConfig.swift */; };
 		846BACA225123D2C00FCDF74 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */; };
 		84E77C7A2512360B00081105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E77C792512360B00081105 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		845D1E112512496D0049FD26 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
 		845D1E15251249A00049FD26 /* ResourceInProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceInProgressCell.swift; sourceTree = "<group>"; };
 		845D1E1725124D5E0049FD26 /* UploadedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedViewController.swift; sourceTree = "<group>"; };
+		84647C702521A1EB005FEBA7 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		846BAC9F25123B8D00FCDF74 /* CloudConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudConfig.swift; sourceTree = "<group>"; };
 		846BACA125123D2C00FCDF74 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		84E77C762512360B00081105 /* ImageUpload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageUpload.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 		847207292516290B00A42A01 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				84647C702521A1EB005FEBA7 /* PinterestLayout.swift */,
 				845D1E07251248FB0049FD26 /* CloudinaryHelper1.swift */,
 				845D1E05251248D50049FD26 /* PersistenceHelper.swift */,
 				845D1E09251249140049FD26 /* Utils.swift */,
@@ -471,6 +474,7 @@
 				84E77C7A2512360B00081105 /* AppDelegate.swift in Sources */,
 				846BACA225123D2C00FCDF74 /* BaseCollectionViewController.swift in Sources */,
 				8459D3792513B2350046051B /* OpenImageViewController.swift in Sources */,
+				84647C712521A1EB005FEBA7 /* PinterestLayout.swift in Sources */,
 				84233F052514D48E003CACD7 /* InProgressViewController.swift in Sources */,
 				84E77C7C2512360B00081105 /* SceneDelegate.swift in Sources */,
 				846BACA025123B8D00FCDF74 /* CloudConfig.swift in Sources */,

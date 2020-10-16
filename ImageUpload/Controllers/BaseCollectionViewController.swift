@@ -50,7 +50,9 @@ class BaseCollectionViewController: UIViewController {
         return nil
     }
    
-    
+    func getView() -> UIView! {
+        return nil
+    }
     
     func getPlusButton() -> UIButton! {
         return nil
@@ -75,6 +77,45 @@ extension UIViewController {
 
         return nil
     }
+    
+    func downloadImagefrmCloud(resource: CloudResource, imgView: UIImageView){
+          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+             return
+          }
+              let progressHandler = { (progress: Progress) in
+                  print("Downloading from Cloudinary: \(Int(progress.fractionCompleted * 100))%")
+              }
+           
+              let url1 =  "https://res.cloudinary.com/dfdoypo9b/image/upload/v1601278669/tl9q3popioo1btuedyjr.jpg"
+        let urlString2  = CloudinaryHelper1.getUrlForTransformation(appDelegate.cloudinary, CLDTransformation(), resource)
+              print(url1)
+              let url = URL(string: urlString2)
+              
+        appDelegate.cloudinary.createDownloader().fetchImage(urlString2, progressHandler, completionHandler: { (result,error) in
+                  
+                  if let error = error {
+                      print("Error downloading image %@", error)
+                  }
+                  else {
+                      print("Image downloaded from Cloudinary successfully")
+                      
+                      do{
+                          let data = try Data(contentsOf: url!)
+                          DispatchQueue.main.async {
+                          imgView.image = UIImage(data: data)
+                         // self.imgView.image = UIImage(data: data)
+                        //  self.savePhotos()
+                          }
+                          
+                      }
+                      catch let er as NSError{
+                          print(er)
+                      }
+                      
+                  }
+              
+              })
+          }
 }
 
 extension BaseCollectionViewController: UICollectionViewDataSource {
@@ -98,6 +139,8 @@ extension BaseCollectionViewController: UICollectionViewDataSource {
             return 0
             
         } else {
+         //   getCollectionView()?.backgroundColor = UIColor.white
+            getView()?.backgroundColor = UIColor.white
             getCollectionView().restore()
         }
         
@@ -106,23 +149,33 @@ extension BaseCollectionViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: getReuseIdentifier(), for: indexPath) as! ResourceCell
-        cell.layer.cornerRadius = 20
+        cell.layer.cornerRadius = 25
         cell.layer.masksToBounds = true
-        cell.imageView.layer.cornerRadius = 20
+        //cell.imageView.layer.cornerRadius = 25
+        cell.imgView.layer.cornerRadius = 25
         let resource = resources[indexPath.row]
         if (resource.publicId != nil) {
             // remote image, smart fetch from Cloudinary:
             // first set placeholder
-            cell.imageView.image = resource.resourceType!.contains("video") ? UIImage(named: "ic_movie_white") : UIImage(named: "ic_cloudinary")
-
+           // cell.imageView.image = resource.resourceType!.contains("video") ? UIImage(named: "ic_movie_white") : UIImage(named: "ic_cloudinary")
+ cell.imgView.image = resource.resourceType!.contains("video") ? UIImage(named: "ic_movie_white") : UIImage(named: "ic_cloudinary")
+            
+            self.downloadImagefrmCloud(resource: resource, imgView: cell.imgView)
             // configure params for image fetch:
-            let resourceType = resource.resourceType == "video" ? CLDUrlResourceType.video : CLDUrlResourceType.image
-            let params = CLDResponsiveParams.fit().setReloadOnSizeChange(true)
-            cell.imageView.cldSetImage(publicId: resource.publicId!, cloudinary: getAppDelegate()!.cloudinary, resourceType: resourceType,
-                    responsiveParams: params, transformation: CLDTransformation().setFetchFormat("jpg"))
+           // let resourceType = resource.resourceType == "video" ? CLDUrlResourceType.video : CLDUrlResourceType.image
+           // let params = CLDResponsiveParams.fit().setReloadOnSizeChange(true)
+           
+         //   let params = CLDResponsiveParams.fit().setReloadOnSizeChange(true)
+          //  let params = CLDResponsiveParams(autoWidth: true, autoHeight: true, cropMode: .fill, gravity: .auto)
+          /* cell.imageView.cldSetImage(publicId: resource.publicId!, cloudinary: getAppDelegate()!.cloudinary, resourceType: resourceType,
+                    responsiveParams: params, transformation: CLDTransformation().setFetchFormat("jpg"))*/
+            
+           // print("Height ==> ",cell.imageView.image?.size.height ?? 200)
+          //  cell.imageView.contentMode = .scaleAspectFill
            // cell.imageView.contentMode = .scaleAspectFit
         } else {
-            setLocalImage(imageView: cell.imageView, resource: resource)
+           // setLocalImage(imageView: cell.imageView, resource: resource)
+            setLocalImage(imageView: cell.imgView, resource: resource)
         }
 
         return cell
@@ -148,12 +201,16 @@ extension BaseCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow = getItemsPerRow()
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = collectionView.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-//
-        return CGSize(width: widthPerItem, height: widthPerItem)
+//        let itemsPerRow = getItemsPerRow()
+//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+//        let availableWidth = collectionView.frame.width - paddingSpace
+//        let widthPerItem = availableWidth / itemsPerRow
+////
+//        let cell = collectionView.cellForItem(at: indexPath) as? ResourceCell
+//        let height = cell?.imageView.image?.size.height ?? 300
+//        print("height == > ", height)
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        return CGSize(width: itemSize, height: itemSize)
         
 
        
@@ -209,6 +266,8 @@ extension UICollectionView {
     func restore() {
         self.backgroundView = nil
     }
+    
+    
 }
 
 extension UIButton {

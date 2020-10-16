@@ -79,7 +79,7 @@ class CloudinaryHelper1 {
         return result
     }
 
-    fileprivate static func getUrlForTransformation(_ cloudinary: CLDCloudinary, _ transformation: CLDTransformation, _ resource: CloudResource, format: String = defaultImageFormat) -> String {
+     static func getUrlForTransformation(_ cloudinary: CLDCloudinary, _ transformation: CLDTransformation, _ resource: CloudResource, format: String = defaultImageFormat) -> String {
         transformation.setDpr(Float(UIScreen.main.scale))
         return cloudinary.createUrl()
                 .setResourceType(resource.resourceType!)

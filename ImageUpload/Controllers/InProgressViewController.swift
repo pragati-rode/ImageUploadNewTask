@@ -44,7 +44,9 @@ class InProgressViewController: BaseCollectionViewController {
     override func getCollectionView() -> UICollectionView! {
         return collectionView1
     }
-    
+    override func getView() -> UIView! {
+        return viewForInProgress
+    }
     override func getPlusButton() -> UIButton! {
         return plusButtonHidden
     }
